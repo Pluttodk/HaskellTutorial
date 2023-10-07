@@ -71,3 +71,11 @@ combineTS (TS t1 p1) (TS t2 p2) = TS timeList complete
             completePoints = foldl insertMaybePair Map.empty (zip t1 p1)
             completeFullPoints = foldl insertMaybePair completePoints (zip t2 p2)
             complete = map (\point -> Map.lookup point completeFullPoints) timeList
+
+
+instance Semigroup (TS a) where
+        (<>) = combineTS
+
+instance Monoid (TS a) where
+        mempty = TS [] []
+        mappend = (<>)
