@@ -79,3 +79,4 @@ instance Semigroup (TS a) where
 instance Monoid (TS a) where
         mempty = TS [] []
         mappend = (<>)
+
