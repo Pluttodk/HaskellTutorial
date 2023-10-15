@@ -1,4 +1,4 @@
-import Data.Char (toLower)
+import Data.Char
 -- Higher order functions
 incAllValues :: [Integer] -> [Integer]
 incAllValues = map (+1)
